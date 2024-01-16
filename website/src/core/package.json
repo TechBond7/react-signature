@@ -1,0 +1,71 @@
+{
+  "name": "@uiw/react-signature",
+  "version": "1.3.0",
+  "description": "A signature board component for react.",
+  "author": "Kenny Wong <wowohoo@qq.com>",
+  "homepage": "https://uiwjs.github.io/react-signature",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-signature.git"
+  },
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    "./README.md": "./README.md",
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./esm/index.js",
+      "types": "./cjs/index.d.ts",
+      "require": "./cjs/index.js"
+    },
+    "./canvas": {
+      "import": "./esm/canvas/index.js",
+      "types": "./cjs/canvas/index.d.ts",
+      "require": "./cjs/canvas/index.js"
+    }
+  },
+  "files": [
+    "dist.css",
+    "dist",
+    "canvas.d.ts",
+    "cjs",
+    "esm",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react-signature",
+    "react.js",
+    "react",
+    "signature",
+    "monorepo",
+    "uiw",
+    "uiw-react",
+    "react-component",
+    "component",
+    "components",
+    "ui",
+    "css",
+    "uikit",
+    "react-ui",
+    "framework"
+  ],
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "dependencies": {
+    "perfect-freehand": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.18.9",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
