@@ -11,7 +11,7 @@ npm install @uiw/react-signature
 
 ```jsx mdx:preview
 import React, { useRef } from "react";
-import Signature from '@uiw/react-signature';
+import Signature from './src/Signature';
 
 export default function App() {
   const $svg = useRef(null);
