@@ -14,7 +14,9 @@ export const ExampleSignature = () => {
   const [undoPaths, setUndoPaths] = useState<SVGPathElement[]>([])
   const [fillColor, setFillColor] = useState('#000000');
   const handle = (evn: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    $svg.current?.clear();
+    while ($svg.current?.svg?.lastChild) {
+      $svg.current.svg.lastChild.remove();
+    }
   };
 
   const resetOption = () => setOptions(defaultOptions);
@@ -31,20 +33,7 @@ export const ExampleSignature = () => {
   };
 
   const handleUndo = () => {
-    const paths = $svg.current?.svg?.getElementsByTagName("path");
-    if (paths?.length === 0) return;
-    const lastPath = paths![paths?.length! - 1];
-    const removedPaths = [...undoPaths];
-    removedPaths.push(lastPath);
-    setUndoPaths(removedPaths);
-    lastPath.parentNode?.removeChild(lastPath);
-  }
-
-  const handleRedo = () => {
-    const removedPaths = [...undoPaths];
-    const lastUndoPath = removedPaths.pop();
-    lastUndoPath && $svg.current?.svg?.appendChild(lastUndoPath);
-    setUndoPaths(removedPaths);
+    $svg.current?.svg?.lastChild!.remove();
   }
 
   const downloadImage = () => {
@@ -86,7 +75,6 @@ export const ExampleSignature = () => {
         <button onClick={handleSVGCopy}>Copy to SVG</button>
         <button onClick={downloadImage}>Download Image</button>
         <button onClick={handleUndo}>Undo</button>
-        <button onClick={handleRedo}>Redo</button>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', paddingTop: '1rem' }}>
         <label>
