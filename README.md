@@ -1,1 +1,1 @@
-core/README.md
+website/src/core/README.md
