@@ -5,10 +5,6 @@ A signature board component for react.
 
 ## Quick Start
 
-```bash
-npm install @uiw/react-signature
-```
-
 ```jsx mdx:preview
 import React, { useRef } from "react";
 import Signature from './src/Signature';
