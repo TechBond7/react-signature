@@ -31,7 +31,7 @@ export default function App() {
 
 ```jsx mdx:preview
 import React, { useRef } from "react";
-import Signature from './src/Signature';
+import Signature from '@uiw/react-signature';
 
 
 const points = {
